@@ -1,3 +1,6 @@
 __pycache__/
 
+classifier/
+vectors/
+
 .DS_Store

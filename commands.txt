@@ -1,0 +1,2 @@
+ opencv_createsamples -info annotations.txt -num 3 -w 24 -h 24 -vec vectors/car.vec
+ opencv_traincascade -data classifier -vec vectors/car.vec -bg bg.txt -numPos 3 -numNeg 25 -numStages 10 -w 24 -h 24

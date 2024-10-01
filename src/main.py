@@ -4,8 +4,8 @@ import cv2
 def main():
   print("Object Detection Demo")
 
-  cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
-  image = cv2.imread("data/demo/car.jpg")
+  cascade = cv2.CascadeClassifier("classifier/cascade.xml")
+  image = cv2.imread("data/demo/cars.bmp")
   gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
   objects = cascade.detectMultiScale(
