@@ -1,4 +1,4 @@
 from utils import show_image
 
 if __name__ == "__main__":
-  show_image(image_path='data/pictures/car_image.jpg')
+  show_image(path='data/pictures/car_image.jpg')

@@ -1,11 +1,11 @@
 import cv2
 
 
-def show_image(title='', image_path='demo.jpg'):
-  image = cv2.imread(image_path)
+def show_image(title='', path='demo.jpg'):
+  image = cv2.imread(path)
 
   if title == '':
-    parsed_filename = image_path.split('/')[-1].replace('_', ' ')
+    parsed_filename = path.split('/')[-1].replace('_', ' ')
     parsed_filename = parsed_filename.split('.')[0]
 
     filename = parsed_filename.split()
