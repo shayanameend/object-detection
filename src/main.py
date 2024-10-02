@@ -1,22 +1,11 @@
-from utils import read_image, detect_objects, show_image
+from utils import read_video, show_video
 
 
 def main():
-  print("Object Detection Demo")
-
-  image, gray_image = read_image('data/demo/cars.bmp')
-
-  show_image(title="Original Image", image=image)
-
-  image, gray_image, objects = detect_objects(
-    cascade_path='classifier/cascade.xml',
-    image=image,
-    gray_image=gray_image,
-    height=18,
-    width=32,
-  )
-
-  show_image(title="Detected Objects", image=image)
+  video_path = 'data/demo/cars.avi'
+  cascade_path = 'classifier/cascade.xml'
+  video = read_video(video_path)
+  show_video(title="Detected Objects in Video", video=video, cascade_path=cascade_path)
 
 
 if __name__ == "__main__":
