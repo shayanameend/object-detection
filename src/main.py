@@ -1,32 +1,22 @@
-import cv2
+from utils import read_image, detect_objects, show_image
 
 
 def main():
   print("Object Detection Demo")
 
-  cascade = cv2.CascadeClassifier("classifier/cascade.xml")
-  image = cv2.imread("data/demo/cars.bmp")
-  gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+  image, gray_image = read_image('data/demo/cars.bmp')
 
-  objects = cascade.detectMultiScale(
-    image=gray_image,
-    scaleFactor=1.1,
-    minNeighbors=5,
-    minSize=(30, 30)
+  show_image(title="Original Image", image=image)
+
+  image, gray_image, objects = detect_objects(
+    cascade_path='classifier/cascade.xml',
+    image=image,
+    gray_image=gray_image,
+    height=18,
+    width=32,
   )
 
-  for (x, y, w, h) in objects:
-    cv2.rectangle(
-      img=image,
-      pt1=(x, y),
-      pt2=(x + w, y + h),
-      color=(0, 255, 0),
-      thickness=2
-    )
-
-  cv2.imshow(winname="Detected Objects", mat=image)
-  cv2.waitKey(0)
-  cv2.destroyAllWindows()
+  show_image(title="Detected Objects", image=image)
 
 
 if __name__ == "__main__":
