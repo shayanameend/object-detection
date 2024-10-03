@@ -1,2 +1,2 @@
-opencv_createsamples -info annotations.txt -num 6 -w 32 -h 18 -vec vectors/car.vec
-opencv_traincascade -data classifier -vec vectors/car.vec -bg bg.txt -numPos 6 -numNeg 25 -numStages 10 -w 32 -h 18
+opencv_createsamples -info annotations.txt -num 0 -w 0 -h 0 -vec vectors/parrots.vec
+opencv_traincascade -data classifier -vec vectors/parrots.vec -bg bg.txt -numPos 0 -numNeg 25 -numStages 10 -w 0 -h 0
